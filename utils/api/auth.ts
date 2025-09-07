@@ -1,4 +1,6 @@
-export async function registerUser(formData) {
+import { LoginRequest, SignupRequest } from "@/types";
+
+export async function registerUser(formData: SignupRequest) {
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}/auth/register`,
     {
@@ -22,7 +24,7 @@ export async function registerUser(formData) {
   return response.json();
 }
 
-export async function loginUser(formData) {
+export async function loginUser(formData: LoginRequest) {
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}/auth/login`,
     {
